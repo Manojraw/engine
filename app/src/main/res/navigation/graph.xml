@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/mainfragment">
+
+    <fragment
+        android:id="@+id/mainfragment"
+        android:name="com.example.myapplication.mainfragment"
+        android:label="fragment_mainfragment"
+        tools:layout="@layout/fragment_mainfragment" >
+        <action
+            android:id="@+id/action_mainfragment_to_game_detail"
+            app:destination="@id/game_detail" />
+        <action
+            android:id="@+id/action_mainfragment_to_eventdetaile"
+            app:destination="@id/eventdetaile" />
+        <action
+            android:id="@+id/action_mainfragment_to_fragmentsearch"
+            app:destination="@id/fragmentsearch" />
+    </fragment>
+    <fragment
+        android:id="@+id/game_detail"
+        android:name="com.example.myapplication.game_detail"
+        android:label="fragment_game_detail"
+        tools:layout="@layout/fragment_game_detail" >
+        <action
+            android:id="@+id/action_game_detail_to_mainfragment"
+            app:destination="@id/mainfragment" />
+        <action
+            android:id="@+id/action_game_detail_self"
+            app:destination="@id/game_detail"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/game_detail"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/eventdetaile"
+        android:name="com.example.myapplication.Eventdetaile"
+        android:label="Eventdetaile" >
+        <action
+            android:id="@+id/action_eventdetaile_to_game_detail"
+            app:destination="@id/game_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentsearch"
+        android:name="com.example.myapplication.fragmentsearch"
+        android:label="fragment_fragmentsearch"
+        tools:layout="@layout/fragment_fragmentsearch" >
+        <action
+            android:id="@+id/action_fragmentsearch_to_mainfragment"
+            app:destination="@id/mainfragment" />
+        <action
+            android:id="@+id/action_fragmentsearch_to_game_detail"
+            app:destination="@id/game_detail" />
+    </fragment>
+</navigation>
